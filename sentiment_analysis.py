@@ -1,7 +1,7 @@
 # sentiment_analysis.py
 import nltk
 from nltk.corpus import movie_reviews  
-from nltk.classify import NaiveBayesClassifier
+from nltk.classify import NaiveBayesClassifier 
 
 # Make sure nltk resources are downloaded
 nltk.download('movie_reviews', quiet=True)
