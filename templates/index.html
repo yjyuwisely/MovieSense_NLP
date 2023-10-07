@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Sentiment Analysis</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
-<div class="container">
-<h2>MovieSense: Sentiment Analysis & Review Summarisation</h2>
+    <h2 class="LogoGradient-text Mont text-center mb-5">MovieSense: Sentiment Analysis & Review Summarisation</h2>
+    <div class="container">
+        <!-- Input -->
+        <div class=" input-section">
+            <form action="/" method="post" class=" review-form">
+                <textarea class="card p-3" id="reviewText" name="text" placeholder="Write your movie reviews here." rows="11"
+                    required>{{ user_input }}</textarea>
+                <div class="Mont buttons">
+                    <input class="Mont custom-btn btn-4" type="submit" name="Analysis" value="Analysis">
+                    <button class="Mont custom-btn btn-4" type="button" onclick="clearTextAndHideMessage()">Reset</button>
+                </div>
+            </form>
+        </div>
 
-<form action="/" method="post" class="review-form">
-    <textarea id="reviewText" name="text" placeholder="Write your movie reviews here." rows="10" required>{{ user_input }}</textarea>
-    <br><br>
-    <input type="submit" name="Predict" value="Predict">
-    <input type="submit" name="Summary" value="Summary">
-    <button type="button" onclick="clearTextAndHideMessage()">Reset</button>
-</form>
-</div>
+        <!-- Results -->
+        <div class="result-section">
+            <!-- Summary -->
+            <div class="summary" id="summarySection">
+                {% if summary %}
+                <h5 class="Mont">Review Summary</h5>
+                <p class="card p-3" id="summaryResult">{{ summary }}</p>
+                {% endif %}
+            </div>
 
-<div id="predictionMessage">
-{% if prediction %}
-    <div id="predictionMessage">
-        <br><br>
-        <h3>Predicted Sentiment: {{ prediction }}</h3>
+            <!-- Prediction -->
+            <div class="sentiment" id="predictionSection">
+                {% if prediction %}
+                <h5><span class="Mont prediction-text">Predicted Sentiment</span><br>
+                    <span class="emoji">{{ prediction }}</span>
+                </h5>
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
     </div>
-{% else %}
-    <div id="predictionMessage" style="display: none;">
-        <br><br>
-        <h3></h3>
-    </div>
-{% endif %}
 
-{% if summary %}
-    <br><br>
-    <h3>Review Summary:</h3>
-    <p>{{ summary }}</p>
-{% endif %}
-</div>
+    <script>
+        function clearTextAndHideMessage() {
+            document.getElementById("reviewText").value = "";
+            document.getElementById("summarySection").style.display = "none";
+            document.getElementById("predictionSection").style.display = "none";
+        }
+    </script>
 
-<script>
-    function clearTextAndHideMessage() {
-        document.getElementById("reviewText").value = "";
-        document.getElementById("predictionMessage").style.display = "none";
-    }
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -44,11 +44,15 @@ classifier = NaiveBayesClassifier.train(features_train)
 def predict_sentiment(sentence):
     # Compute the probabilities for each class
     probabilities = classifier.prob_classify(extract_features(sentence.split()))
-
+    
     # Pick the maximum value
-    predicted_sentiment = probabilities.max()
-
-    return predicted_sentiment
+    # Return the corresponding emoji based on the sentiment prediction
+    if probabilities.max() == "Positive":
+        return "😊"  # Emoji for positive sentiment
+    elif probabilities.max() == "Negative":
+        return "😞"  # Emoji for negative sentiment
+    # predicted_sentiment = probabilities.max()
+    # return predicted_sentiment
 
 # Summarisation 
 from transformers import BartForConditionalGeneration, BartTokenizer
@@ -60,5 +64,5 @@ tokenizer = BartTokenizer.from_pretrained(model_name)
 
 def generate_summary(text):
     inputs = tokenizer.encode("summarize: " + text, return_tensors="pt", max_length=1024, truncation=True)
-    summary_ids = model.generate(inputs, max_length=150, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)
+    summary_ids = model.generate(inputs, max_length=100, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)
     return tokenizer.decode(summary_ids[0], skip_special_tokens=True)
