@@ -1,4 +1,6 @@
-#Sentiment analysis on movie reviews using Naive Bayes Classifier 
+"""
+Sentiment Analysis on the NLTK movie reviews dataset using the Naive Bayes Classifier.
+"""
 import nltk #Natural Language Toolkit
 nltk.download('movie_reviews')  
 

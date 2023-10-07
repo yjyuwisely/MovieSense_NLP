@@ -1,22 +1,34 @@
-# sentiment_analysis.py
-import nltk
-from nltk.corpus import movie_reviews  
-from nltk.classify import NaiveBayesClassifier 
+"""
+Sentiment Analysis using the Naive Bayes Classifier:
 
-# Make sure nltk resources are downloaded
-nltk.download('movie_reviews', quiet=True)
+- Trains on the 'sentiment_data' dataset derived from Rotten Tomato reviews.
+- This implementation is a modification of the original which used the NLTK movie reviews dataset.
+- The 'sentiment_data' directory contains reviews categorized as 'positive' and 'negative' 
+  stored in corresponding subfolders.
+"""
+
+import os
+from nltk.classify import NaiveBayesClassifier 
 
 # Extract features from the input list of words
 def extract_features(words):
     return dict([(word, True) for word in words])
 
-# Load the reviews from the corpus 
-fileids_pos = movie_reviews.fileids('pos')
-fileids_neg = movie_reviews.fileids('neg')
-     
-# Extract the features from the reviews and label 
-features_pos = [(extract_features(movie_reviews.words(fileids=[f])), 'Positive') for f in fileids_pos]
-features_neg = [(extract_features(movie_reviews.words(fileids=[f])), 'Negative') for f in fileids_neg]
+# Load individual reviews from the given file
+def load_reviews_from_file(file_path):
+    with open(file_path, 'r') as f:
+        return f.read().splitlines()
+    
+# Path to sentiment data
+path_to_sentiment_data = 'sentiment_data' 
+
+# Paths to positive and negative data files
+positive_file_path = os.path.join(path_to_sentiment_data, 'positive', 'positive.txt')
+negative_file_path = os.path.join(path_to_sentiment_data, 'negative', 'negative.txt')
+
+# Extract features and labels for each individual review
+features_pos = [(extract_features(review.split()), 'Positive') for review in load_reviews_from_file(positive_file_path)]
+features_neg = [(extract_features(review.split()), 'Negative') for review in load_reviews_from_file(negative_file_path)]
      
 # Define the train and test split (80% and 20%)
 threshold = 0.8
