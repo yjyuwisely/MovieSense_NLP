@@ -67,9 +67,9 @@ def generate_summary(text):
     summary_ids = model.generate(inputs, max_length=100, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)
     return tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
-# Translation to Korean 
+# Translation to French 
 from transformers import pipeline
-def translate_to_korean(text):
-    translator = pipeline("translation_en_to_ko", model="Helsinki-NLP/opus-mt-en-fr")
+def translate_to_french(text):
+    translator = pipeline("translation_en_to_fr", model="Helsinki-NLP/opus-mt-en-fr")
     outputs = translator(text, clean_up_tokenization_spaces=True, min_length=100)
     return outputs[0]['translation_text']

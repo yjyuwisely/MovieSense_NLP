@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from main_sentiment_analysis import predict_sentiment, generate_summary, translate_to_korean
+from main_sentiment_analysis import predict_sentiment, generate_summary, translate_to_french
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def index():
         if "Analysis" in request.form:
             prediction = predict_sentiment(text)
             summary = generate_summary(text)
-            translation = translate_to_korean(text)
+            translation = translate_to_french(text)
 
     return render_template('index.html', prediction=prediction, summary=summary, user_input=user_input, translation=translation)
 
