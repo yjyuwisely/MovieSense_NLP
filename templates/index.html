@@ -7,12 +7,13 @@
 </head>
 <body>
 <div class="container">
-<h2>Sentiment Analysis on Movie Reviews</h2>
+<h2>MovieSense: Sentiment Analysis & Review Summarisation</h2>
 
 <form action="/" method="post" class="review-form">
     <textarea id="reviewText" name="text" placeholder="Write your movie reviews here." rows="10" required>{{ user_input }}</textarea>
     <br><br>
-    <input type="submit" value="Predict">
+    <input type="submit" name="Predict" value="Predict">
+    <input type="submit" name="Summary" value="Summary">
     <button type="button" onclick="clearTextAndHideMessage()">Reset</button>
 </form>
 </div>
@@ -28,6 +29,12 @@
         <br><br>
         <h3></h3>
     </div>
+{% endif %}
+
+{% if summary %}
+    <br><br>
+    <h3>Review Summary:</h3>
+    <p>{{ summary }}</p>
 {% endif %}
 </div>
 
