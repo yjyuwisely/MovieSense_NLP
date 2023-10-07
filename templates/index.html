@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h3 class="LogoGradient-text Mont text-center mb-5">MovieSense: Sentiment Analysis, Summarisation, Translation</h3>
+    <h3 class="LogoGradient-text Mont text-center mb-4">MovieSense: Sentiment Analysis, Summarisation, Translation</h3>
     <div class="container">
         <!-- Input -->
         <div class=" input-section">
@@ -33,26 +33,26 @@
             <div class="summary" id="summarySection">
                 {% if summary %}
                 <h5 class="Mont">Review Summary</h5>
-                <p class="card shadow p-3" id="summaryResult">{{ summary }}</p>
+                <p class="card shadow p-3">{{ summary }}</p>
                 {% endif %}
             </div>
 
             <!-- Prediction -->
             <div class="sentiment" id="predictionSection">
                 {% if prediction %}
-                <h5><span class="Mont prediction-text">Predicted Sentiment</span><br>
+                <h5><span class="Mont">Predicted Sentiment</span><br>
                     <span class="emoji">{{ prediction }}</span>
                 </h5>
                 {% else %}
                 {% endif %}
             </div>
         </div>
-        <!-- Translation -->
-        <div class="translation-section" id="translationSection">
-            {% if translation %} 
-            <h5><span class="Mont prediction-text">Translation to French:</span><br>
 
-                <p>{{ translation }}</p>
+        <!-- Translation -->
+        <div class="translation" id="translationSection">
+            {% if translation %} 
+            <h5><span class="Mont">Translation to French</span><br>
+                <p class="card shadow p-3 mt-2">{{ translation }}</p>
                 {% endif %}
             </h5>
         </div>

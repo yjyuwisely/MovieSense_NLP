@@ -99,6 +99,12 @@ textarea {
     text-align: justify;
 }
 
+.summary, .translation p {
+    font-size: 0.9rem; 
+    font-weight: normal;
+    line-height: 150%;
+}
+
 .sentiment {
     height: 60%;
     overflow: auto;
@@ -112,19 +118,33 @@ textarea {
     margin: 0;
     padding: 0;
     /* if you want to give a little space between them */
+    font-size: 0.9rem;
     margin-right: 5px;
     display: inline-block;
     vertical-align: middle;
     /* align them vertically in the middle */
 }
 
-.translation-section {
-    width: 100%;            /* makes the element span the full width */
-    height: 50vh;
-    /* overflow: auto;  */
+.translation {
+    font-size: 0.9rem;
+    text-align: justify;
+    vertical-align: middle;
+    width: 83%;
+    height: 30vh;          /* takes up half the viewport height */
+    position: fixed;       /* fixes the position */
+    bottom: 0;             /* sticks to the bottom */
+    left: 50%;             /* moves the left edge to the center of the viewport */
+    transform: translateX(-50%);  /* shifts the div back to the left by half of its width */
     padding: 1rem;
-    box-sizing: border-box; /* ensures padding and border are included in the element's total width */
+    box-sizing: border-box; /* includes padding and border in the element's total dimensions */
+    z-index: 1000;         /* ensures it appears above other elements */
+    /*overflow: auto;         in case the content inside exceeds the given height, it becomes scrollable */
 }
+
+.translation-text{
+    font-size: 0.9rem;
+}
+
 
 /* button style */
 .buttons {
