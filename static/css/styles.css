@@ -1,0 +1,35 @@
+body {
+    color: #333;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex; /* This enables flexbox for this container */
+    flex-direction: column; /* This stacks children of the container vertically */
+    justify-content: flex-end; /* This aligns children vertically to the bottom */
+    height: 66.66vh; 
+    overflow: auto; 
+    padding: 20px; 
+}
+
+.review-form {
+    text-align: center;
+    width: 55vw;
+    margin: 0 auto;
+}
+
+#reviewText {
+    width: 100%;
+    text-align: justify;
+}
+
+.predictionMessage {
+    height: 33.33vh; /* 1/3 of the viewport height */
+    display: flex;
+    align-items: center; /* This will vertically center the content inside the div */
+    justify-content: center; /* This will horizontally center the content inside the div */
+}

@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+<div class="container">
+<h2>Sentiment Analysis on Movie Reviews</h2>
 
-<h2>Sentiment Analysis</h2>
-
-<form action="/" method="post">
-    <textarea name="text" placeholder="Type your sentence here..." rows="4" required></textarea>
+<form action="/" method="post" class="review-form">
+    <textarea id="reviewText" name="text" placeholder="Write your movie reviews here." rows="10" required>{{ user_input }}</textarea>
     <br><br>
     <input type="submit" value="Predict">
+    <button type="button" onclick="clearTextAndHideMessage()">Reset</button>
 </form>
+</div>
 
+<div id="predictionMessage">
 {% if prediction %}
-    <br><br>
-    <h3>Predicted Sentiment: {{ prediction }}</h3>
+    <div id="predictionMessage">
+        <br><br>
+        <h3>Predicted Sentiment: {{ prediction }}</h3>
+    </div>
+{% else %}
+    <div id="predictionMessage" style="display: none;">
+        <br><br>
+        <h3></h3>
+    </div>
 {% endif %}
+</div>
 
+<script>
+    function clearTextAndHideMessage() {
+        document.getElementById("reviewText").value = "";
+        document.getElementById("predictionMessage").style.display = "none";
+    }
+</script>
 </body>
 </html>
