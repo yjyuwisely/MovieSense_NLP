@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from main_sentiment_analysis import predict_sentiment, generate_summary
+from main_sentiment_analysis import predict_sentiment, generate_summary, translate_to_korean
 
 app = Flask(__name__)
 
@@ -7,6 +7,7 @@ app = Flask(__name__)
 def index():
     prediction = None
     summary = None
+    translation = None
     user_input = ""   # Set default value to empty string instead of None
 
     if request.method == 'POST':
@@ -16,8 +17,9 @@ def index():
         if "Analysis" in request.form:
             prediction = predict_sentiment(text)
             summary = generate_summary(text)
+            translation = translate_to_korean(text)
 
-    return render_template('index.html', prediction=prediction, summary=summary, user_input=user_input)
+    return render_template('index.html', prediction=prediction, summary=summary, user_input=user_input, translation=translation)
 
 if __name__ == '__main__':
     app.run(debug=True)

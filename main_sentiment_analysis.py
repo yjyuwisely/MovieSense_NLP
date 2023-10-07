@@ -30,7 +30,7 @@ negative_file_path = os.path.join(path_to_sentiment_data, 'negative', 'negative.
 features_pos = [(extract_features(review.split()), 'Positive') for review in load_reviews_from_file(positive_file_path)]
 features_neg = [(extract_features(review.split()), 'Negative') for review in load_reviews_from_file(negative_file_path)]
      
-# Define the train and test split (80% and 20%)
+# Define the train (80%) and test split (20%)
 threshold = 0.8
 num_pos = int(threshold * len(features_pos))
 num_neg = int(threshold * len(features_neg))
@@ -66,3 +66,10 @@ def generate_summary(text):
     inputs = tokenizer.encode("summarize: " + text, return_tensors="pt", max_length=1024, truncation=True)
     summary_ids = model.generate(inputs, max_length=100, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)
     return tokenizer.decode(summary_ids[0], skip_special_tokens=True)
+
+# Translation to Korean
+from transformers import pipeline
+def translate_to_korean(text):
+    translator = pipeline("translation_en_to_ko", model="Helsinki-NLP/opus-mt-en-fr")
+    outputs = translator(text, clean_up_tokenization_spaces=True, min_length=100)
+    return outputs[0]['translation_text']

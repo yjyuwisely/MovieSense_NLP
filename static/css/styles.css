@@ -37,6 +37,11 @@
     }
 }
 
+/* .inputStyle{
+    background-color: #fafafa !important;
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
+    } */
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -78,7 +83,7 @@ textarea {
 .result-section {
     width: 45%;
     height: 100%;
-    border-left: 1px solid #ccc;
+    /* border-left: 1px solid #ccc; */
     /* Just to visually separate the sections. Can be removed if you like. */
     padding-left: 2%;
 }
@@ -111,6 +116,14 @@ textarea {
     display: inline-block;
     vertical-align: middle;
     /* align them vertically in the middle */
+}
+
+.translation-section {
+    width: 100%;            /* makes the element span the full width */
+    height: 50vh;
+    /* overflow: auto;  */
+    padding: 1rem;
+    box-sizing: border-box; /* ensures padding and border are included in the element's total width */
 }
 
 /* button style */
