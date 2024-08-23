@@ -1,4 +1,4 @@
-<h1>MovieSense: Sentiment Analysis, Summarisation, and Translation</h1>
+<h1>MovieSense: Sentiment Analysis, Summarization, and Translation</h1>
 <p align="justify">Welcome to <b>MovieSense</b>, an advanced Natural Language Processing project that provides sentiment analysis, summarization, and translation services for movie reviews.<p align="justify">
 <br>
   
@@ -9,7 +9,7 @@ Designed with an AI and NLP focus, this project aims to assist in understanding 
 
 ## Features
 1. <b>Sentiment Analysis:</b> This feature leverages the Naive Bayes Classifier to discern whether reviews are positive or negative, utilising data from Rotten Tomatoes.<br>
-2. <b>Summarisation:</b> The application employs the BART model from Facebook to generate concise summaries for extended reviews.<br>
+2. <b>Summarization:</b> The application employs the BART model from Facebook to generate concise summaries for extended reviews.<br>
 3. <b>Translation:</b> Reviews can be translated into French to cater to a diverse audience.<br>
 <br>
   
@@ -18,8 +18,8 @@ Designed with an AI and NLP focus, this project aims to assist in understanding 
 - **Languages:** Python
 - **NLP Techniques & Models:**
   - Sentiment Analysis: Naive Bayes Classifier
-  - Summarisation: BART (from Hugging Face's Transformers)
-  - Translation: Helsinki-NLP's model (from Hugging Face's Transformers)
+  - Summarization: BART (from Hugging Face's Transformers)
+  - Translation: mBART model (from Hugging Face's Transformers)
 - **Frameworks/Libraries:**
   - NLTK
   - Transformers (Hugging Face)

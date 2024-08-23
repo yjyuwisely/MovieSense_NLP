@@ -54,7 +54,7 @@ def predict_sentiment(sentence):
     # predicted_sentiment = probabilities.max()
     # return predicted_sentiment
 
-# Summarisation 
+# Summarization 
 from transformers import BartForConditionalGeneration, BartTokenizer
 
 # Load the pre-trained BART model and tokenizer
@@ -67,9 +67,25 @@ def generate_summary(text):
     summary_ids = model.generate(inputs, max_length=100, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)
     return tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
-# Translation to French 
-from transformers import pipeline
-def translate_to_french(text): 
-    translator = pipeline("translation_en_to_fr", model="Helsinki-NLP/opus-mt-en-fr")
-    outputs = translator(text, clean_up_tokenization_spaces=True, min_length=100)
-    return outputs[0]['translation_text']
+# Translation to French using mBART
+from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
+
+translation_model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
+translation_tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
+
+def translate_to_french(text):
+    tokenizer.src_lang = "en_XX"
+    encoded_text = translation_tokenizer(text, return_tensors="pt")
+    generated_tokens = translation_model.generate(
+        **encoded_text,
+        forced_bos_token_id=translation_tokenizer.lang_code_to_id["fr_XX"]
+    )
+    outputs = translation_tokenizer.batch_decode(generated_tokens, skip_special_tokens=True, clean_up_tokenization_spaces=True)
+    return outputs[0]
+
+# Translation to French using Helsinki-NLP
+# from transformers import pipeline
+# def translate_to_french(text): 
+#     translator = pipeline("translation_en_to_fr", model="helsinki-nlp/opus-mt-en-fr")
+#     outputs = translator(text, clean_up_tokenization_spaces=True, min_length=100)
+#     return outputs[0]['translation_text']
