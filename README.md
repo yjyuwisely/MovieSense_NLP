@@ -31,9 +31,9 @@ Designed with an AI and NLP focus, this project aims to assist in understanding 
 <p align="justify" style="display:none">
   
 1. Clone the repository: <br>
-  `git clone https://github.com/yjyuwisely/Sentiment_Analysis.git`<br>
+  `git clone https://github.com/yjyuwisely/MovieSense_NLP.git`<br>
 2. Navigate to the project directory: <br>
-  `cd Sentiment_Analysis`<br>
+  `cd MovieSense_NLP`<br>
 3. Install the required packages: <br>
   `pip install -r requirements.txt`<br>
 4. Run the main script: <br>
@@ -50,7 +50,7 @@ While the project runs without a virtual environment, it's recommended to use on
 1. Install **virtualenv** if you haven't:  
    `pip install virtualenv`
 2. Clone the repository:  
-   `git clone https://github.com/yjyuwisely/Sentiment_Analysis.git`
+   `git clone https://github.com/yjyuwisely/MovieSense_NLP.git`
 3. Create a virtual environment:  
    `virtualenv .env`
 4. Activate the virtual environment:
