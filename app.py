@@ -18,8 +18,8 @@ def index():
             prediction = predict_sentiment(text)
             summary = generate_summary(text)
             translation = translate_to_french(text)
-
-    return render_template('index.html', prediction=prediction, summary=summary, user_input=user_input, translation=translation)
+    # Remove the "summarize: " prefix if it appears in the summary
+    return render_template('index.html', prediction=prediction, summary=summary.replace("summarize: ", ""), user_input=user_input, translation=translation)
 
 if __name__ == '__main__':
     app.run(debug=True)
