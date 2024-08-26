@@ -11,6 +11,7 @@ Designed with an AI and NLP focus, this project aims to assist in understanding 
 1. <b>Sentiment Analysis:</b> Utilizes a pre-trained BERT model (`distilbert-base-uncased-finetuned-sst-2-english`) to classify movie reviews as positive or negative, based on data from Rotten Tomatoes.<br>
 2. <b>Summarization:</b> Generates concise summaries of extended reviews using Facebook's BART model.<br>
 3. <b>Translation:</b> Supports multilingual audiences by translating reviews into French with the mBART model.<br>
+4. <b>Text Generation:</b> Implements a pre-trained GPT-2 model for generating movie reviews based on user prompts. Future enhancements, including the integration of Retrieval-Augmented Generation (RAG), are planned to improve the contextual relevance and specificity of the generated text.
 <br>
   
 ## Technologies Used
@@ -20,6 +21,7 @@ Designed with an AI and NLP focus, this project aims to assist in understanding 
   - Sentiment Analysis: BERT (`distilbert-base-uncased-finetuned-sst-2-english`, from Hugging Face's Transformers)
   - Summarization: BART (from Hugging Face's Transformers)
   - Translation: mBART model (from Hugging Face's Transformers)
+  - Text Generation: GPT-2 (from Hugging Face's Transformers), currently using the base pre-trained model to generate movie reviews based on specific prompts. 
 - **Frameworks/Libraries:**
   - NLTK
   - Transformers (Hugging Face)
