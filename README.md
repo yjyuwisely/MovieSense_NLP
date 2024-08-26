@@ -8,16 +8,16 @@ Designed with an AI and NLP focus, this project aims to assist in understanding 
 <br>
 
 ## Features
-1. <b>Sentiment Analysis:</b> This feature leverages a pre-trained BERT model (`distilbert-base-uncased-finetuned-sst-2-english`) to determine whether reviews are positive or negative, utilizing data from Rotten Tomatoes.<br>
-2. <b>Summarization:</b> The application employs the BART model from Facebook to generate concise summaries for extended reviews.<br>
-3. <b>Translation:</b> Reviews can be translated into French using the mBART model, providing multilingual support to cater to a diverse audience.<br>
+1. <b>Sentiment Analysis:</b> Utilizes a pre-trained BERT model (`distilbert-base-uncased-finetuned-sst-2-english`) to classify movie reviews as positive or negative, based on data from Rotten Tomatoes.<br>
+2. <b>Summarization:</b> Generates concise summaries of extended reviews using Facebook's BART model.<br>
+3. <b>Translation:</b> Supports multilingual audiences by translating reviews into French with the mBART model.<br>
 <br>
   
 ## Technologies Used
 
 - **Languages:** Python
 - **NLP Techniques & Models:**
-  - Sentiment Analysis: BERT (`distilbert-base-uncased-finetuned-sst-2-english`)
+  - Sentiment Analysis: BERT (`distilbert-base-uncased-finetuned-sst-2-english`, from Hugging Face's Transformers)
   - Summarization: BART (from Hugging Face's Transformers)
   - Translation: mBART model (from Hugging Face's Transformers)
 - **Frameworks/Libraries:**

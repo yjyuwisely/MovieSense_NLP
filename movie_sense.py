@@ -83,13 +83,13 @@ from transformers import BartForConditionalGeneration, BartTokenizer
 
 # Load the pre-trained BART model and tokenizer
 model_name = "facebook/bart-large-cnn"
-model = BartForConditionalGeneration.from_pretrained(model_name)
-tokenizer = BartTokenizer.from_pretrained(model_name)
+summary_model = BartForConditionalGeneration.from_pretrained(model_name)
+summary_tokenizer = BartTokenizer.from_pretrained(model_name)
 
 def generate_summary(text):
-    inputs = tokenizer.encode("summarize: " + text, return_tensors="pt", max_length=1024, truncation=True)
-    summary_ids = model.generate(inputs, max_length=100, min_length=10, length_penalty=2.0, num_beams=4, early_stopping=True)
-    return tokenizer.decode(summary_ids[0], skip_special_tokens=True)
+    inputs = summary_tokenizer.encode("summarize: " + text, return_tensors="pt", max_length=1024, truncation=True)
+    summary_ids = summary_model.generate(inputs, max_length=100, min_length=10, length_penalty=2.0, num_beams=4, early_stopping=True)
+    return summary_tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
 
 """
@@ -102,7 +102,7 @@ translation_model = MBartForConditionalGeneration.from_pretrained("facebook/mbar
 translation_tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
 
 def translate_to_french(text):
-    tokenizer.src_lang = "en_XX"
+    translation_tokenizer.src_lang = "en_XX"
     encoded_text = translation_tokenizer(text, return_tensors="pt")
     generated_tokens = translation_model.generate(
         **encoded_text,
@@ -110,3 +110,26 @@ def translate_to_french(text):
     )
     outputs = translation_tokenizer.batch_decode(generated_tokens, skip_special_tokens=True, clean_up_tokenization_spaces=True)
     return outputs[0]
+
+
+"""
+Text Generation using GPT-2
+
+This function generates text based on a user-provided prompt using the GPT-2 model.
+- Input: A string prompt (e.g., "Write a positive movie review").
+- Output: A generated text that follows the prompt, typically in the same style or context.
+- The function uses the Hugging Face Transformers library to load the pre-trained GPT-2 model and tokenizer.
+
+This is integrated into the MovieSense_NLP project to allow users to generate custom movie reviews or related content.
+"""
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+# Load pre-trained model and tokenizer
+model_name = "gpt2"
+generator_model = GPT2LMHeadModel.from_pretrained(model_name)
+generator_tokenizer  = GPT2Tokenizer.from_pretrained(model_name)
+
+def generate_text(text):
+    inputs = generator_tokenizer.encode(text, return_tensors="pt")
+    outputs = generator_model.generate(inputs, max_length=150, num_return_sequences=1)
+    return generator_tokenizer.decode(outputs[0], skip_special_tokens=True)
