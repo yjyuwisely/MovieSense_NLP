@@ -129,7 +129,13 @@ model_name = "gpt2"
 generator_model = GPT2LMHeadModel.from_pretrained(model_name)
 generator_tokenizer  = GPT2Tokenizer.from_pretrained(model_name)
 
-def generate_text(text):
+def generate_text(text, max_new_tokens=50):
     inputs = generator_tokenizer.encode(text, return_tensors="pt")
-    outputs = generator_model.generate(inputs, max_length=150, num_return_sequences=1)
-    return generator_tokenizer.decode(outputs[0], skip_special_tokens=True)
+    outputs = generator_model.generate(inputs, max_new_tokens=max_new_tokens, num_return_sequences=1)
+    generated_text = generator_tokenizer.decode(outputs[0], skip_special_tokens=True)
+    
+    # Remove the prompt from the generated text
+    if generated_text.startswith(text):
+        generated_text = generated_text[len(text):].strip()
+    
+    return generated_text

@@ -23,7 +23,8 @@ def index():
             generation = generate_text(text)  # Assuming you have a function called generate_text
     # Ensure summary is not None before calling replace
     if summary:
-        summary = summary.replace("summarize: ", "") # Remove the "summarize: " prefix if it appears in the summary
+        # Remove any existing "Summarize: " or "summarize: " prefix, regardless of case
+        summary = summary.replace("Summarize: ", "").replace("summarize: ", "")
     return render_template('index.html', prediction=prediction, summary=summary, user_input=generation if generation else user_input, translation=translation)
 
 if __name__ == '__main__':

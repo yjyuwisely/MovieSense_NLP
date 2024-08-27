@@ -1,27 +1,27 @@
-<h1>MovieSense: Sentiment Analysis, Summarization, and Translation</h1>
-<p align="justify">Welcome to <b>MovieSense</b>, an advanced Natural Language Processing project that provides sentiment analysis, summarization, and translation services for movie reviews.<p align="justify">
+<h1>MovieSense: Sentiment Analysis, Text Generation, Summarization, and Translation</h1>
+<p align="justify">Welcome to <b>MovieSense</b>, an advanced Natural Language Processing project that provides sentiment analysis, text generation, summarization, and translation services for movie reviews.<p align="justify">
 <br>
   
 <h2>Overview</h2>
 <p align="justify">
-Designed with an AI and NLP focus, this project aims to assist in understanding the sentiments behind movie reviews, provide a concise summary for lengthy reviews, and translate them from English to French.</p>
+Designed with an AI and NLP focus, this project aims to assist in understanding the sentiments behind movie reviews, provide a concise summary for lengthy reviews, generate contextually relevant reviews based on specific prompts, and translate them from English to French.</p>
 <br>
 
 ## Features
 1. <b>Sentiment Analysis:</b> Utilizes a pre-trained BERT model (`distilbert-base-uncased-finetuned-sst-2-english`) to classify movie reviews as positive or negative, based on data from Rotten Tomatoes.<br>
-2. <b>Summarization:</b> Generates concise summaries of extended reviews using Facebook's BART model.<br>
-3. <b>Translation:</b> Supports multilingual audiences by translating reviews into French with the mBART model.<br>
-4. <b>Text Generation:</b> Implements a pre-trained GPT-2 model for generating movie reviews based on user prompts. Future enhancements, including the integration of Retrieval-Augmented Generation (RAG), are planned to improve the contextual relevance and specificity of the generated text.
+2. <b>Text Generation:</b> Implements a pre-trained GPT-2 model for generating movie reviews based on user prompts. Future enhancements, including the integration of Retrieval-Augmented Generation (RAG), are planned to improve the contextual relevance and specificity of the generated text.
+3. <b>Summarization:</b> Generates concise summaries of extended reviews using Facebook's BART model.<br>
+4. <b>Translation:</b> Supports multilingual audiences by translating reviews into French with the mBART model.<br>
 <br>
   
 ## Technologies Used
 
 - **Languages:** Python
 - **NLP Techniques & Models:**
-  - Sentiment Analysis: BERT (`distilbert-base-uncased-finetuned-sst-2-english`, from Hugging Face's Transformers)
-  - Summarization: BART (from Hugging Face's Transformers)
-  - Translation: mBART model (from Hugging Face's Transformers)
-  - Text Generation: GPT-2 (from Hugging Face's Transformers), currently using the base pre-trained model to generate movie reviews based on specific prompts. 
+  - **Sentiment Analysis:** BERT (`distilbert-base-uncased-finetuned-sst-2-english`, from Hugging Face's Transformers)
+  - **Text Generation:** GPT-2 (from Hugging Face's Transformers), currently using the base pre-trained model to generate movie reviews based on specific prompts. 
+  - **Summarization:** BART (from Hugging Face's Transformers)
+  - **Translation:** mBART model (from Hugging Face's Transformers)
 - **Frameworks/Libraries:**
   - NLTK
   - Transformers (Hugging Face)
@@ -65,8 +65,9 @@ While the project runs without a virtual environment, it's recommended to use on
 <br>
 
 ## Usage
-1. <b>Sentiment Analysis:</b> Reviews are categorised into 'positive' or 'negative' using the Naive Bayes Classifier and represented with emojis.<br>
-2. <b>Summarisation:</b> Input the desired text to receive a concise summary.<br>
+1. <b>Sentiment Analysis:</b> Reviews are categorised into 'positive' or 'negative' using the DistilBERT model (`distilbert-base-uncased-finetuned-sst-2-english`) and represented with emojis.<br>
+2. <b>Text Generation:</b> Enter a prompt (e.g., "Write a positive review about [Movie Name]") to generate a contextually relevant movie review. The model currently uses a pre-trained GPT-2 model for generating the text based on the provided prompt.
+3. <b>Summarization:</b> Input the desired text to receive a concise summary.<br>
 3. <b>Translation:</b> Translate reviews into French.<br>
 <br>
 
