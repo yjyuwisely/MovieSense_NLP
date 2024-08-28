@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from movie_sense import predict_sentiment, generate_summary, translate_to_french, generate_text
+from main_movie_sense import predict_sentiment, generate_summary, translate_to_french
+from text_generation_gpt2 import generate_text
 
 app = Flask(__name__)
 

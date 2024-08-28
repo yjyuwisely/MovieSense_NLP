@@ -2,14 +2,32 @@
 <p align="justify">Welcome to <b>MovieSense</b>, an advanced Natural Language Processing project that provides sentiment analysis, text generation, summarization, and translation services for movie reviews.<p align="justify">
 <br>
   
-<h2>Overview</h2>
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Installation](#installation)
+   - [Optional: Setting Up a Virtual Environment](#optional-setting-up-a-virtual-environment)
+5. [Usage](#usage)
+6. [Future Scope](#future-scope)
+7. [References and Further Readings](#references-and-further-readings)
+8. [Page Screenshot](#page-screenshot)
+<br>
+
+## Overview
 <p align="justify">
 Designed with an AI and NLP focus, this project aims to assist in understanding the sentiments behind movie reviews, provide a concise summary for lengthy reviews, generate contextually relevant reviews based on specific prompts, and translate them from English to French.</p>
 <br>
 
 ## Features
-1. <b>Sentiment Analysis:</b> Utilizes a pre-trained BERT model (`distilbert-base-uncased-finetuned-sst-2-english`) to classify movie reviews as positive or negative, based on data from Rotten Tomatoes.<br>
-2. <b>Text Generation:</b> Implements a pre-trained GPT-2 model for generating movie reviews based on user prompts. Future enhancements, including the integration of Retrieval-Augmented Generation (RAG), are planned to improve the contextual relevance and specificity of the generated text.
+1. <b>Sentiment Analysis:</b> Utilizes a pre-trained BERT model (`distilbert-base-uncased-finetuned-sst-2-english`) 
+to classify movie reviews as positive or negative, based on data from Rotten Tomatoes.<br>
+2. <b>Text Generation:</b> Implements a pre-trained GPT-2 model for generating movie reviews based on user prompts. 
+To improve the contextual relevance and specificity of the generated text, 
+a Retrieval-Augmented Generation (RAG) approach is integrated. 
+This enhancement allows the model to retrieve relevant information from a knowledge base, 
+such as a database of existing movie reviews, before generating new content.
 3. <b>Summarization:</b> Generates concise summaries of extended reviews using Facebook's BART model.<br>
 4. <b>Translation:</b> Supports multilingual audiences by translating reviews into French with the mBART model.<br>
 <br>
@@ -45,8 +63,7 @@ Designed with an AI and NLP focus, this project aims to assist in understanding 
 </p>
 <br>
 
-## Optional: Setting up a virtual environment
-
+### Optional: Setting up a virtual environment
 While the project runs without a virtual environment, it's recommended to use one for isolation:
 
 1. Install **virtualenv** if you haven't:  
@@ -66,9 +83,10 @@ While the project runs without a virtual environment, it's recommended to use on
 
 ## Usage
 1. <b>Sentiment Analysis:</b> Reviews are categorised into 'positive' or 'negative' using the DistilBERT model (`distilbert-base-uncased-finetuned-sst-2-english`) and represented with emojis.<br>
-2. <b>Text Generation:</b> Enter a prompt (e.g., "Write a positive review about [Movie Name]") to generate a contextually relevant movie review. The model currently uses a pre-trained GPT-2 model for generating the text based on the provided prompt.
+2. <b>Text Generation:</b> Enter a prompt (e.g., "Write a positive review about [Movie Name]") to generate a contextually relevant movie review. 
+The RAG model retrieves relevant information from a database of existing movie reviews to ensure that the generated text is contextually accurate and aligned with the desired sentiment.
 3. <b>Summarization:</b> Input the desired text to receive a concise summary.<br>
-3. <b>Translation:</b> Translate reviews into French.<br>
+4. <b>Translation:</b> Translate reviews into French.<br>
 <br>
 
 ## Future Scope
@@ -78,13 +96,18 @@ While the project runs without a virtual environment, it's recommended to use on
 - User accounts to save and manage past reviews.
 <br>
 
-## References
-1. [Natural Language Processing with Transformers, Revised Edition](https://www.amazon.com/-/ko/dp/1098136799/ref=sr_1_1?qid=1696744546&refinements=p_27%3ALewis+Tunstall&s=books&sr=1-1&text=Lewis+Tunstall)<br>
-2. [Artificial Intelligence with Python: Your complete guide to building intelligent apps using Python 3.x, 2nd Edition](https://www.amazon.com/-/ko/dp/183921953X/ref=sr_1_1?crid=SVEK8NYGJHHH&keywords=Artificial+Intelligence+with+Python%3A+Your+complete+guide+to+building+intelligent+apps+using+Python&qid=1696744519&s=books&sprefix=%2Cstripbooks-intl-ship%2C334&sr=1-1)<br>
-3. [Python Deep Learning Projects: 9 projects demystifying neural network and deep learning models for building intelligent systems](https://www.amazon.com/dp/B07FNY2BZR?ref_=ast_author_dp)<br>
+## References and Further Readings
+1. Artasanchez, A., & Joshi, P. (2019). *Artificial Intelligence with Python: Your complete guide to building intelligent apps using Python 3.x* (2nd ed.). Packt Publishing.<br>
+[Available on Amazon](https://www.amazon.com/Artificial-Intelligence-Python-complete-intelligent/dp/183921953X)<br>
+2. Lamons, M., Kumar, R., & Nagaraja, A. (2018) *Python Deep Learning Projects: 9 projects demystifying neural network and deep learning models for building intelligent systems* (1st ed.). Packt Publishing.<br>
+[Available on Amazon](https://www.amazon.com/Python-Deep-Learning-Projects-demystifying/dp/1788997093)<br>
+3. Seo, J. (2024). *Developing AI services based on LLM with LangChain*. Gilbut.<br>
+[Available on GitHub](https://github.com/gilbutITbook/080413)<br>
+4. Tunstall, L., von Werra, L., & Wolf, T. (2022) *Natural Language Processing with Transformers: Building Language Applications with Hugging Face* (1st ed.). O'Reilly Media.<br>
+[Available on Amazon](https://www.amazon.com/Natural-Language-Processing-Transformers-Applications/dp/1098103246)<br>
 <br>
 
-<h2>Page Screenshot</h2>
+## Page Screenshot
 Positive Sentiment Example:
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb5udNA%2Fbtsxp3doUAk%2FU38yky0rcDo3KPc6yCGtLk%2Fimg.png">
 Negative Sentiment Example:
