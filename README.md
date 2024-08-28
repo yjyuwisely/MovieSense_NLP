@@ -47,15 +47,14 @@ such as a database of existing movie reviews, before generating new content.
 - **Frontend:** HTML, CSS, JavaScript.
 <br>
 
-<h2>Installation</h2>
-<p align="justify" style="display:none">
+## Installation
   
 1. Clone the repository: <br>
   `git clone https://github.com/yjyuwisely/MovieSense_NLP.git`<br>
 2. Navigate to the project directory: <br>
-  `cd MovieSense_NLP`<br>
+  `cd MovieSense_NLP/src`<br>
 3. Install the required packages: <br>
-  `pip install -r requirements.txt`<br>
+  `pip install -r ../requirements.txt`<br>
 4. Run the main script: <br>
   `python app.py`<br>
 5. Run the main script: <br>
@@ -64,22 +63,29 @@ such as a database of existing movie reviews, before generating new content.
 <br>
 
 ### Optional: Setting up a virtual environment
+
 While the project runs without a virtual environment, it's recommended to use one for isolation:
 
-1. Install **virtualenv** if you haven't:  
+1. Install `virtualenv` if you haven't: 
    `pip install virtualenv`
-2. Clone the repository:  
+2. Clone the repository:
    `git clone https://github.com/yjyuwisely/MovieSense_NLP.git`
-3. Create a virtual environment:  
+3. Navigate to the project directory:
+   `cd MovieSense_NLP`
+4. Create a virtual environment:
    `virtualenv .env`
-4. Activate the virtual environment:
+5. Activate the virtual environment:
    - On macOS and Linux:  
      `source .env/bin/activate`
    - On Windows:  
      `.\.env\Scripts\activate`
-5. When you're done working on the project, you can deactivate the virtual environment:  
+
+6. Follow steps 2 to 5 in the [Installation section](#installation) to navigate to `src`, install the required packages, and run the application.
+
+7. When you're done working on the project, you can deactivate the virtual environment:  
    `deactivate`
 <br>
+
 
 ## Usage
 1. <b>Sentiment Analysis:</b> Reviews are categorised into 'positive' or 'negative' using the DistilBERT model (`distilbert-base-uncased-finetuned-sst-2-english`) and represented with emojis.<br>
