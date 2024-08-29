@@ -1,3 +1,4 @@
+# Deprecated combined implementations (if necessary)
 """
 Sentiment Analysis using the Naive Bayes Classifier:
 

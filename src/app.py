@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
-from nlp.main_movie_sense import predict_sentiment, generate_summary, translate_to_french
+from nlp.sentiment_analysis_bert import predict_sentiment
+from nlp.summarization_bart import generate_summary
+from nlp.translation_mbart import translate_to_french
 from nlp.text_generation_gpt2 import generate_text
 
 # Specify template and static folders
