@@ -62,11 +62,30 @@ def predict_sentiment(sentence):
     # Debugging: Print the predicted label
     print(f"Predicted label: {label}")  # Example output: POSITIVE
 
-    # Return the corresponding emoji based on the sentiment prediction
+    # Apple-style emoji URLs
+    positive_emoji_url = "https://em-content.zobj.net/thumbs/120/apple/354/smiling-face-with-smiling-eyes_1f60a.png"
+    negative_emoji_url = "https://em-content.zobj.net/thumbs/120/apple/354/disappointed-face_1f61e.png"
+
+    # Return the corresponding HTML image tag based on the sentiment prediction # width="24" height="24"
     if label == "NEGATIVE":  
-        return "😞"  # Emoji for negative sentiment
+        return f'<img src="{negative_emoji_url}" alt="negative sentiment" style="width: 0.9em; height: 0.9em;">'  # Apple-style emoji image for negative sentiment
     elif label == "POSITIVE":  
-        return "😊"  # Emoji for positive sentiment
+        return f'<img src="{positive_emoji_url}" alt="positive sentiment" style="width: 0.9em; height: 0.9em;">'  # Apple-style emoji image for positive sentiment
+
+# def predict_sentiment(sentence):
+#     result = classifier(sentence)[0]
+#     label = result['label']
+
+#     # Debugging: Print the full prediction result
+#     print(f"Full prediction result: {result}")  # Example output: {'label': 'POSITIVE', 'score': 0.9998805522918701}
+#     # Debugging: Print the predicted label
+#     print(f"Predicted label: {label}")  # Example output: POSITIVE
+
+#     # Return the corresponding emoji based on the sentiment prediction
+#     if label == "NEGATIVE":  
+#         return "😞"  # Emoji for negative sentiment
+#     elif label == "POSITIVE":  
+#         return "😊"  # Emoji for positive sentiment
 
 # Test cases
 print('1: ' + predict_sentiment("I absolutely loved this movie, it was fantastic!"))  # Expected: 😊
