@@ -3,6 +3,7 @@ from nlp.sentiment_analysis_bert import predict_sentiment
 from nlp.summarization_bart import generate_summary
 from nlp.translation_mbart import translate_to_french
 from nlp.text_generation_gpt2 import generate_text
+#from nlp.text_generation_rag_lanchain import generate_text
 
 # Specify template and static folders
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
