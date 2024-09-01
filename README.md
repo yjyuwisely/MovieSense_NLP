@@ -10,25 +10,48 @@ and text generation, specifically tailored for movie review data.
 
 Navigate through this `README.md` to learn more about the project, its features, setup, and future plans.
 
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Technologies Used](#technologies-used)
-4. [Models and Methods Used](#models-and-methods-used)
-   - [Archived Models](#archived-models)
-5. [Your Contribution](#your-contribution)
-6. [Project Timeline](#project-timeline) 
-7. [Installation](#installation)
-   - [Optional: Setting Up a Virtual Environment](#optional-setting-up-a-virtual-environment)
-8. [Usage](#usage)
-   - [Additional Tips](#additional-tips)
-   - [Limitations](#limitations)
-9. [Results and Performance](#results-and-performance)
-10. [Future Scope](#future-scope)
-11. [References and Further Readings](#references-and-further-readings)
-12. [Page Screenshots](#page-screenshots)
+## Table of Contents
+
+### 1. Overview and Features
+1.1 [Overview](#overview)  
+1.2 [Project Composition Diagram](#project-composition-diagram)  
+1.3 [Features and Advantages](#features-and-advantages)  
+
+### 2. Technologies and Models
+2.1 [Technologies Used](#technologies-used)  
+2.2 [Models and Methods Used](#models-and-methods-used)  
+   - 2.2.1 [Archived Models](#archived-models)  
+
+### 3. Problem Solving and Outcomes
+3.1 [Issues and Solutions](#issues-and-solutions)  
+3.2 [Expected Outcomes and Application Areas](#expected-outcomes-and-application-areas)  
+
+### 4. Contributions and Execution
+4.1 [Your Contribution](#your-contribution)  
+4.2 [Project Timeline](#project-timeline)  
+
+### 5. Installation
+5.1 [Installation](#installation)  
+   - 5.1.1 [Optional: Setting Up a Virtual Environment](#optional-setting-up-a-virtual-environment)  
+
+### 6. Usage
+6.1 [Usage](#usage)  
+   - 6.1.1 [Setting the Output Location for Text Generation](#setting-the-output-location-for-text-generation)  
+   - 6.1.2 [Additional Tips](#additional-tips)  
+   - 6.1.3 [Limitations](#limitations)  
+
+### 7. Performance and Future Work
+7.1 [Results and Performance](#results-and-performance)  
+7.2 [Future Scope](#future-scope)  
+
+### 8. Additional Resources
+8.1 [Page Screenshots](#page-screenshots)  
+8.2 [References and Further Readings](#references-and-further-readings)  
 <br>
 
-## Overview
+# 1. Overview and Features
+## 1.1 Overview
+<!--1. Starting with a general overview provides readers with a quick understanding of what the project is about. -->
 <p align="justify">
 <b>MovieSense</b> is an advanced NLP-powered application designed for in-depth analysis and enhancement of movie reviews 
 using cutting-edge AI techniques. By leveraging state-of-the-art NLP models like BERT, mBART, BART, and GPT-2, 
@@ -54,18 +77,38 @@ highlighting the adaptability and potential impact of this project.
 </p>
 <br>
 
-## Features
+## 1.2 Project Composition Diagram
+
+The following diagram provides an overview of the architecture and components of the **MovieSense** project:
+
+![Project Composition Diagram](path/to/diagram.png)
+
+*The diagram illustrates the flow of data through various components such as the NLP pipeline, models used for sentiment analysis, translation, summarization, and text generation, and the backend/frontend integration.*
+
+Stay tuned for updates!
+
+<br>
+
+## 1.3 Features and Advantages
+<!-- 2. Highlighting the unique aspects and benefits of your project early on helps readers see its value and 
+why they should be interested. -->
 1. **Sentiment Analysis**
    - Classifies movie reviews as positive or negative using a pre-trained BERT model (`distilbert-base-uncased-finetuned-sst-2-english`), trained on Rotten Tomatoes data.
+
 2. **Translation**
    - Translates reviews from English to French using the mBART model, demonstrating the handling of multilingual NLP tasks.
+
 3. **Summarization**
    - Generates concise summaries of reviews with Facebook's BART model, effectively capturing the core content.
+
 4. **Text Generation**
    - Produces movie reviews based on user prompts with GPT-2, enhanced by Retrieval-Augmented Generation (RAG) for contextual accuracy.
 <br>  
 
-## Technologies Used
+# 2. Technologies and Models
+ 
+## 2.1 Technologies Used
+<!-- 3. After understanding the benefits, readers can see the tools and technologies you used to achieve those advantages. -->
 - **Languages:** Python
 - **NLP Techniques & Models:**
   - **Sentiment Analysis:** BERT
@@ -79,8 +122,8 @@ highlighting the adaptability and potential impact of this project.
 - **Frontend:** HTML, CSS, JavaScript for user interface development.
 <br>
 
-## Models and Methods Used
-
+## 2.2 Models and Methods Used
+<!-- 4. This section dives deeper into the specifics of the models and methods, providing more technical readers with detailed insights. -->
 The project utilizes several state-of-the-art NLP models and methods, each tailored to specific tasks for analyzing and generating movie reviews. These models were selected for their effectiveness, performance, and suitability for the required NLP tasks. Below is a summary of the models and methods used:
 <br><br>
 1. **BERT (Bidirectional Encoder Representations from Transformers), 2018**  
@@ -157,7 +200,7 @@ The project utilizes several state-of-the-art NLP models and methods, each tailo
    - **Details**: Facilitates the retrieval of relevant documents, enhancing the contextual accuracy of text generated by the RAG model.
 <br><br>
 
-### Archived Models
+### 2.2.1 Archived Models
 The following models were previously used in this project but have since been archived in favor of more advanced approaches. Below is a summary of the archived models and their roles in the project:
 <br><br>
 
@@ -181,7 +224,24 @@ The archived implementations can be found in the `archive` directory of the proj
 <br>
 <br>
 
-## Your Contribution
+# 3. Problem Solving and Outcomes
+
+## 3.1 Issues and Solutions
+<!-- 5. Discussing the challenges faced and how you solved them adds depth to your project's story 
+and demonstrates problem-solving skills.-->
+Stay tuned for updates!
+
+<br>
+
+## 3.2 Expected Outcomes and Application Areas
+<!-- 6. Explaining the potential impact and real-world applications shows the relevance and utility of your work. -->
+Stay tuned for updates!
+
+<br>
+
+# 4. Contributions and Execution
+## 4.1 Your Contribution
+<!-- 7. Clearly states your role and contributions, which is especially important for job applications. -->
 As the sole developer of <b>MovieSense</b>, I was responsible for the entire project lifecycle, including:
 
 1. **Project Design and Architecture**: Conceptualized the overall structure of the NLP pipeline 
@@ -208,8 +268,8 @@ This end-to-end approach demonstrates my ability to design, develop, and deploy 
 while continuously optimizing them for better performance.
 <br><br>
 
-## Project Timeline
-
+## 4.2 Project Timeline
+<!-- 8. Provides context for the development process and how the project evolved over time. -->
 - **October 6, 2023**  
   - Created the initial web template for the MovieSense interface.
 
@@ -248,7 +308,9 @@ while continuously optimizing them for better performance.
 
 <br>
 
-## Installation
+# 5. Installation
+## 5.1 Installation
+<!-- 9. After understanding the project, readers might want to try it out. Having the installation instructions here makes sense. -->
 Follow these steps to set up **MovieSense** on your local machine:
 
 1. **Clone the repository**: Clone the project repository from GitHub to your local machine.<br>
@@ -279,7 +341,7 @@ Follow these steps to set up **MovieSense** on your local machine:
    like sentiment analysis, translation, summarization, and text generation.
 <br>
 
-### Optional: Setting up a virtual environment
+### 5.1.1 Optional: Setting up a virtual environment
 While the project can run without a virtual environment, it's highly recommended to use one for package isolation and to avoid conflicts with other Python projects.
 
 1. **Install `virtualenv`**: If you don't have `virtualenv` installed, run the following command:<br>
@@ -308,7 +370,9 @@ install the required packages, and run the application.
    `deactivate`
 <br>
 
-## Usage
+# 6. Usage
+## 6.1 Usage
+<!-- 10. Explains how to use the project after it is set up, logically following the installation steps. -->
 
 Follow the instructions below to use the features of **MovieSense** on the web interface:
 
@@ -337,19 +401,39 @@ Follow the instructions below to use the features of **MovieSense** on the web i
    - **Description**: The **"Reset"** button clears all input fields, allowing you to start a new analysis or generate a new review.
    - **How to Use**:  
      - Click the **"Reset"** button to clear the input text box and reset the page to its default state.'     
+
 <br>
 
-### Additional Tips
+### 6.1.1 Setting the Output Location for Text Generation
+
+By default, the text generation using the GPT-3.5-turbo model outputs the result in the terminal. If you want the output to be displayed directly in the text box on the webpage:
+
+- **To Display Output in the Web Interface**:  
+  Modify the code in the `text_generation_rag_lanchain.py` file by commenting out the terminal-based output section and uncommenting the `generate_text` function. This change will enable the output to be displayed on the web interface.
+
+- **To Display Output in the Terminal**:  
+  Ensure the terminal-based output section in `text_generation_rag_lanchain.py` is active, and comment out the `generate_text` function.
+
+For more details, refer to the [`text_generation_rag_lanchain.py`](src/nlp/text_generation_rag_lanchain.py) file in the repository.
+
+<br>
+
+### 6.1.2 Additional Tips
 
 - **Ensure Proper Configuration**: Make sure you have set up your `.env` file with the OpenAI API key before using the text generation feature.
 - **Internet Connection Required**: An internet connection is necessary to access the OpenAI API for text generation.
 
-### Limitations
+<br>
+ 
+### 6.1.3 Limitations
 
 - **Text Generation Feature**: The text generation feature using the OpenAI API requires a paid subscription to access the GPT-3.5-turbo model. Users will need their own API key with an active subscription to enable this feature.
+
 <br><br>
 
-## Results and Performance
+# 7. Performance and Future Work
+## 7.1 Results and Performance
+<!-- 12. Presents the results and evaluation metrics after readers know how the project works. -->
 <!-- This section will be updated soon to include the following:
 - Evaluation metrics (e.g., accuracy, BLEU score, ROUGE score) for sentiment analysis, translation, summarization, and text generation.
 - Sample outputs and comparisons with baseline models.
@@ -371,10 +455,14 @@ We evaluated two pre-trained models for text generation on movie reviews:
 ### Discussion
 
 The BLEU score comparison indicates that, even without fine-tuning, the RAG-enhanced GPT-3.5-turbo model outperforms the baseline GPT-2 model. This suggests that retrieval-augmented techniques can significantly improve the relevance and coherence of generated movie reviews. Future work could focus on fine-tuning these models to further enhance performance.
+<br><br>
 
-<br>
 
-## Future Scope
+## 7.2 Future Scope 
+<!-- 13. Outlines future improvements and extensions, which is a natural progression after discussing current results.-->
+<!-- The next steps for your project, inspires confidence in its ongoing development, and can attract contributions or collaborations. -->
+<!-- Potential Enhancements, New Features or Functionalities, Further Research, 
+Long-Term Goals, Opportunities for Collaboration -->
 
 - Extend translation support to other languages.
 
@@ -402,25 +490,21 @@ The BLEU score comparison indicates that, even without fine-tuning, the RAG-enha
 
 <br>
 
-## References and Further Readings
-1. Artasanchez, A., & Joshi, P. (2019). *Artificial Intelligence with Python: Your complete guide to building intelligent apps using Python 3.x* (2nd ed.). Packt Publishing.<br>
-[Available on Amazon](https://www.amazon.com/Artificial-Intelligence-Python-complete-intelligent/dp/183921953X)<br>
-2. Lamons, M., Kumar, R., & Nagaraja, A. (2018) *Python Deep Learning Projects: 9 projects demystifying neural network and deep learning models for building intelligent systems* (1st ed.). Packt Publishing.<br>
-[Available on Amazon](https://www.amazon.com/Python-Deep-Learning-Projects-demystifying/dp/1788997093)<br>
-3. Seo, J. (2024). *Developing AI services based on LLM with LangChain*. Gilbut. (Written in Korean) <br>
-[Available on GitHub](https://github.com/gilbutITbook/080413)<br>
-4. Tunstall, L., von Werra, L., & Wolf, T. (2022) *Natural Language Processing with Transformers: Building Language Applications with Hugging Face* (1st ed.). O'Reilly Media.<br>
-[Available on Amazon](https://www.amazon.com/Natural-Language-Processing-Transformers-Applications/dp/1098103246)<br>
-<br>
-
+# 8. Additional Resources
 <!-- Positive Sentiment Example:
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb5udNA%2Fbtsxp3doUAk%2FU38yky0rcDo3KPc6yCGtLk%2Fimg.png">
 Negative Sentiment Example:
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCpxxG%2FbtsxvIFFLyI%2FRthmnpzRTiaanXaDxgCEjK%2Fimg.png"> -->
 
-## Page Screenshots
-
+## 8.1 Page Screenshots
+<!-- 11. Placing the screenshots at the end serves as a visual summary and reinforces everything explained before.-->
 Below are some screenshots of the **MovieSense** interface showcasing its key functionalities:
+
+### Initial Web Page
+![Initial Web Page](src/images/initial.png)<br>
+*This screenshot displays the initial state of the **MovieSense** web interface 
+before any input is provided. It shows the layout of the input text box and 
+the main buttons (Analysis, Generator, Reset) available for user interaction.*
 
 ### Positive Sentiment Example
 ![Positive Sentiment Example](src/images/positive.png)<br>
@@ -445,3 +529,16 @@ Below are examples of text generated by the GPT-3.5-turbo model in the terminal:
 ![Negative Review Output](src/images/terminal-negative-output2.png)
 <br>
 *These screenshots show the output of a negative movie review generated using the GPT-3.5-turbo model via the terminal. The terminal output illustrates how the model handles generating text for different sentiments.*
+
+<br>
+
+## 8.2 References and Further Readings
+<!-- 14. Offers additional resources for readers who want to learn more or verify the information. -->
+1. Artasanchez, A., & Joshi, P. (2019). *Artificial Intelligence with Python: Your complete guide to building intelligent apps using Python 3.x* (2nd ed.). Packt Publishing.<br>
+[Available on Amazon](https://www.amazon.com/Artificial-Intelligence-Python-complete-intelligent/dp/183921953X)<br>
+2. Lamons, M., Kumar, R., & Nagaraja, A. (2018) *Python Deep Learning Projects: 9 projects demystifying neural network and deep learning models for building intelligent systems* (1st ed.). Packt Publishing.<br>
+[Available on Amazon](https://www.amazon.com/Python-Deep-Learning-Projects-demystifying/dp/1788997093)<br>
+3. Seo, J. (2024). *Developing AI services based on LLM with LangChain*. Gilbut. (Written in Korean) <br>
+[Available on GitHub](https://github.com/gilbutITbook/080413)<br>
+4. Tunstall, L., von Werra, L., & Wolf, T. (2022) *Natural Language Processing with Transformers: Building Language Applications with Hugging Face* (1st ed.). O'Reilly Media.<br>
+[Available on Amazon](https://www.amazon.com/Natural-Language-Processing-Transformers-Applications/dp/1098103246)<br>
