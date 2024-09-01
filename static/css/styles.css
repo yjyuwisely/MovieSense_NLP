@@ -111,6 +111,8 @@ textarea {
 }
 
 .emoji {
+    margin-top: -15px; /* Adjust this value as needed to reduce the gap */
+    display: inline-block; /* Ensures that the emoji is aligned properly */
     font-size: 6rem;
 }
 

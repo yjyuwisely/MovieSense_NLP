@@ -1,4 +1,4 @@
-<h1>MovieSense: Sentiment Analysis, Translation, Summarization, and Text Generation</h1>
+﻿<h1>MovieSense: Sentiment Analysis, Translation, Summarization, and Text Generation</h1>
 <p align="justify">Welcome to <b>MovieSense</b>, an advanced Natural Language Processing (NLP) project 
 designed to analyze and enhance movie reviews using state-of-the-art AI techniques. 
 This project offers a comprehensive suite of services, including sentiment analysis, translation, summarization, 
@@ -15,14 +15,17 @@ Navigate through this `README.md` to learn more about the project, its features,
 3. [Technologies Used](#technologies-used)
 4. [Models and Methods Used](#models-and-methods-used)
    - [Archived Models](#archived-models)
-5. [Your Contribution](#your-contribution) 
-6. [Installation](#installation)
+5. [Your Contribution](#your-contribution)
+6. [Project Timeline](#project-timeline) 
+7. [Installation](#installation)
    - [Optional: Setting Up a Virtual Environment](#optional-setting-up-a-virtual-environment)
-7. [Usage](#usage)
-8. [Results and Performance](#results-and-performance)
-9. [Future Scope](#future-scope)
-10. [References and Further Readings](#references-and-further-readings)
-11. [Page Screenshot](#page-screenshot)
+8. [Usage](#usage)
+   - [Additional Tips](#additional-tips)
+   - [Limitations](#limitations)
+9. [Results and Performance](#results-and-performance)
+10. [Future Scope](#future-scope)
+11. [References and Further Readings](#references-and-further-readings)
+12. [Page Screenshots](#page-screenshots)
 <br>
 
 ## Overview
@@ -77,61 +80,82 @@ highlighting the adaptability and potential impact of this project.
 <br>
 
 ## Models and Methods Used
-The project utilizes several state-of-the-art NLP models, each tailored for specific tasks related to analyzing and generating movie reviews. These models were selected based on their effectiveness, performance, and suitability for the required NLP tasks. Below is a summary of the models and methods used, including their release years and core functionalities:
-<br><br>
 
-1. **BERT (Bidirectional Encoder Representations from Transformers)**, **2018**  
+The project utilizes several state-of-the-art NLP models and methods, each tailored to specific tasks for analyzing and generating movie reviews. These models were selected for their effectiveness, performance, and suitability for the required NLP tasks. Below is a summary of the models and methods used:
+<br><br>
+1. **BERT (Bidirectional Encoder Representations from Transformers), 2018**  
 
    - **Model Used**: `distilbert-base-uncased-finetuned-sst-2-english`  
    
    - **Purpose**: Sentiment analysis to classify movie reviews as positive or negative.  
    
-   - **Details**: BERT is a transformer-based model developed by Google, known for its ability 
-   to understand the context of words in a sentence. DistilBERT is a smaller, faster, and lighter version of BERT, 
-   fine-tuned on the SST-2 dataset to improve performance for sentiment classification tasks.
+   - **Details**: A smaller, faster version of BERT fine-tuned on the SST-2 dataset, 
+   designed to understand the context of words for accurate sentiment classification.
    <br><br>
-2. **mBART (Multilingual BART)**, **2020**  
+
+2. **mBART (Multilingual BART), 2020**  
    
    - **Model Used**: `facebook/mbart-large-50-many-to-many-mmt`  
    
    - **Purpose**: Translation of movie reviews into French to support multilingual audiences.  
-  
-   - **Details**: mBART is a sequence-to-sequence transformer model that extends BART's capabilities to multiple languages. 
-   The `facebook/mbart-large-50-many-to-many-mmt` variant is specifically designed for many-to-many translation tasks, 
-   enhancing the accessibility of movie reviews for non-English-speaking audiences by effectively translating content 
-   from English to French and other languages.
+   
+   - **Details**: A sequence-to-sequence transformer model tailored for many-to-many translation tasks, 
+   enhancing accessibility by translating content from English to multiple languages.
    <br><br>
-3. **BART (Bidirectional and Auto-Regressive Transformers)**, **2019**  
 
+3. **BART (Bidirectional and Auto-Regressive Transformers), 2019**  
+   
    - **Model Used**: `facebook/bart-large-cnn`  
    
    - **Purpose**: Summarization of extended movie reviews.  
    
-   - **Details**: BART is a transformer-based model developed by Facebook AI, 
-   widely used for text generation and summarization tasks. 
-   It combines a bidirectional encoder with an autoregressive decoder to produce high-quality summaries 
+   - **Details**: Combines a bidirectional encoder with an autoregressive decoder to produce high-quality summaries 
    that capture the essence of longer texts.
    <br><br>
-4. **GPT-2 (Generative Pre-trained Transformer 2)**, **2019**  
 
-   - **Model Used**: `gpt2`  
+4. **GPT-2 (Generative Pre-trained Transformer 2), 2019**  
    
-   - **Purpose**: Text generation based on user prompts.  
+   - **Model Used**: `gpt2` (Hugging Face Transformers)  
    
-   - **Details**: GPT-2 is an autoregressive language model developed by OpenAI, capable of 
-   generating coherent and contextually relevant text. The project employs a Retrieval-Augmented Generation (RAG) approach, 
-   which enhances text relevance by retrieving information from a knowledge base before generation.
+   - **Purpose**: Baseline text generation based on user prompts.  
+   
+   - **Details**: Utilized as a baseline model for generating movie reviews. The pre-trained model 
+   from Hugging Face Transformers serves as a comparison against more advanced text generation techniques.
    <br><br>
-5. **RAG (Retrieval-Augmented Generation)**, **2020**  
 
-   - **Model Used**: `facebook/rag-token-nq` or similar variant  
+5. **Retrieval-Augmented Generation (RAG) with GPT-3.5-turbo, 2023**  
+
+   - **Model Used**: `gpt-3.5-turbo` (Accessed via OpenAI API) with retrieval methods  
+
+   - **Purpose**: To generate contextually relevant text by retrieving and using relevant information 
+   from a knowledge base before generating the output.  
+
+   - **Details**: This approach combines the GPT-3.5-turbo language model, accessed through the OpenAI API, 
+   with a retrieval mechanism that uses `all-MiniLM-L6-v2` embeddings and the `Chroma` vector database. 
+   When a user provides a prompt, the system first retrieves the most relevant documents using similarity search in `Chroma`. 
+   The retrieved documents are then used to guide the GPT-3.5-turbo model 
+   to produce more accurate and context-aware text outputs.  
    
-   - **Purpose**: Enhancing text generation by retrieving relevant information from a knowledge base.  
+   **Note**: The OpenAI API key is required to access the GPT-3.5-turbo model, and usage of the API may incur costs depending on your OpenAI subscription plan.
+   <br><br>
+
+6. **Sentence Embedding Model, 2020**  
    
-   - **Details**: RAG is an approach developed by Facebook AI in 2020 that combines retrieval-based and generative methods 
-   to improve the quality of generated text. It leverages relevant information from external sources to ensure 
-   that the generated content is more accurate and contextually appropriate.
-<br>
+   - **Model Used**: `all-MiniLM-L6-v2` (Sentence Transformers)  
+   
+   - **Purpose**: To create dense vector embeddings for similarity search in the RAG approach.  
+   
+   - **Details**: Generates embeddings for efficient similarity searches, supporting the RAG model by providing relevant context for text generation.
+   <br><br>
+
+7. **Vector Database and Similarity Search, 2023**  
+   
+   - **Tool Used**: `Chroma` (Vector Database)  
+   
+   - **Purpose**: To store document embeddings and perform fast similarity searches for the RAG approach.  
+   
+   - **Details**: Facilitates the retrieval of relevant documents, enhancing the contextual accuracy of text generated by the RAG model.
+<br><br>
 
 ### Archived Models
 The following models were previously used in this project but have since been archived in favor of more advanced approaches. Below is a summary of the archived models and their roles in the project:
@@ -160,22 +184,68 @@ The archived implementations can be found in the `archive` directory of the proj
 ## Your Contribution
 As the sole developer of <b>MovieSense</b>, I was responsible for the entire project lifecycle, including:
 
-- **Project Design and Architecture**: Conceptualized the overall structure of the NLP pipeline to handle multiple tasks such as sentiment analysis, translation, summarization, and text generation.
+1. **Project Design and Architecture**: Conceptualized the overall structure of the NLP pipeline 
+to handle multiple tasks such as sentiment analysis, translation, summarization, and text generation.
 
-- **Model Selection and Implementation**: Chose appropriate models (e.g., BERT, mBART, BART, GPT-2) based on task requirements and implemented them using Hugging Face Transformers.
+2. **Model Selection, Implementation, and Optimization**: Selected appropriate pre-trained models 
+(e.g., DistilBERT, mBART, BART, GPT-2) based on task requirements and integrated them into the project using the Hugging Face Transformers library. 
+Utilized techniques such as Retrieval-Augmented Generation (RAG) to enhance the contextual relevance and accuracy of text generation. 
+For specific details, refer to the [Models and Methods Used](#models-and-methods-used) section.
 
-- **Data Preparation and Evaluation**: Loaded, labeled, and shuffled movie review datasets for sentiment analysis. Implemented evaluation metrics to assess model performance and ensure robust results.
+3. **Data Preparation and Evaluation**: Loaded, labeled, and shuffled movie review datasets for sentiment analysis. 
+Implemented evaluation metrics to assess model performance and ensure robust results.
 
-- **Model Implementation and Optimization**: Implemented pre-trained models for specific tasks like sentiment analysis and summarization, leveraging retrieval-augmented generation (RAG) to improve contextual relevance and accuracy.
+4. **Evaluation and Metrics**: Evaluated model performance using metrics such as BLEU, 
+and iteratively improved models based on these results.
 
-- **Evaluation and Metrics**: Evaluated model performance using metrics such as accuracy, BLEU, and ROUGE, and iteratively improved models based on these results.
+5. **Integration and Deployment**: Developed the backend using Flask and integrated the NLP models 
+into a cohesive application. Designed a user-friendly frontend using HTML, CSS, and JavaScript for deployment.
 
-- **Integration and Deployment**: Developed the backend using Flask and integrated the NLP models into a cohesive application. Designed a user-friendly frontend using HTML, CSS, and JavaScript for deployment.
+6. **Documentation**: Created comprehensive documentation, including this `README.md`, 
+detailing the project's features, models, installation, usage, and future scope.
 
-- **Documentation**: Created comprehensive documentation, including this `README.md`, detailing the project's features, models, installation, usage, and future scope.
+This end-to-end approach demonstrates my ability to design, develop, and deploy complex NLP systems 
+while continuously optimizing them for better performance.
+<br><br>
 
-This end-to-end approach demonstrates my ability to design, develop, and deploy complex NLP systems while continuously optimizing them for better performance.
-<br>
+## Project Timeline
+
+- **October 6, 2023**  
+  - Created the initial web template for the MovieSense interface.
+
+- **October 7-8, 2023**  
+  - Implemented translation from English to French.
+  - Added Bootstrap styling for improved UI/UX and made final styling adjustments.
+  - Developed initial Sentiment Analysis and Summarization features using Transformer models.
+  - Introduced a Reset button to clear inputs and adjusted page styles.
+
+- **Mid-October 2023**  
+  - Trained models using a new dataset to improve performance.
+
+- **August 22-24, 2024**  
+  - Updated **requirements.txt** for dependency management.
+  - Enhanced Sentiment Analysis by replacing Naive Bayes with a pre-trained BERT model.
+  - Switched the translation method to use the mBART model.
+
+- **August 27, 2024**  
+  - Refactored text generation to use `max_new_tokens` for better output control and excluded the prompt message.
+  - Integrated GPT-2 model for initial text generation.
+
+- **August 29-31, 2024**  
+  - Refactored project structure: Separated `main_movie_sense.py` into individual modules for Sentiment Analysis, Text Generation, Summarization, and Translation.
+  - **Implemented RAG-based text generation using LangChain for improved contextual relevance.**
+
+- **September 1, 2024**  
+  - Added `.env` file for OpenAI API key configuration and updated `.gitignore` to exclude it.
+  - Updated **requirements.txt** to include necessary dependencies.
+
+- **Current Status (September 2, 2024)**  
+  - Preparing to finalize the evaluation metrics for text generation using BLEU scores.
+  - Completed updates to README.md for clarity and completeness.
+
+### Next Steps
+- Include BLEU score evaluation results for text generation metrics to complete the project documentation.
+
 <br>
 
 ## Installation
@@ -187,15 +257,23 @@ Follow these steps to set up **MovieSense** on your local machine:
 2. **Navigate to the project directory**: Move into the source directory where the application code resides.<br>
   `cd MovieSense_NLP/src`
 
-3. **Install the required packages**: Install all necessary Python packages and dependencies listed in `requirements.txt`.<br>
+3. **Create an `.env` file for environment variables**: Create a `.env` file in the `src` directory to store your OpenAI API key  . 
+   - Open a terminal or text editor and create a new file named `.env`:<br>
+   `touch .env`
+
+   - Add your OpenAI API key to the `.env` file in the following format:<br>
+   `OPENAI_API_KEY=your_openai_api_key_here`<br>
+   Replace `your_openai_api_key_here` with your actual OpenAI API key.
+
+4. **Install the required packages**: Install all necessary Python packages and dependencies listed in `requirements.txt`.<br>
   `pip install -r ../requirements.txt`
 
-4. **Run the main script**: Start the Flask web application by running the following command:<br>
+5. **Run the main script**: Start the Flask web application by running the following command:<br>
   `python app.py`
    - **Expected Output**: You should see output in the terminal indicating that the Flask server is running, 
    e.g., Running on `http://127.0.0.1:5000/`.
 
-5. **Access the application**: Open a web browser and navigate to the following URL to use **MovieSense**:<br>
+6. **Access the application**: Open a web browser and navigate to the following URL to use **MovieSense**:<br>
   `http://127.0.0.1:5000/`
    - **Expected Outcome**: You should see the **MovieSense** interface where you can use features 
    like sentiment analysis, translation, summarization, and text generation.
@@ -231,35 +309,97 @@ install the required packages, and run the application.
 <br>
 
 ## Usage
-1. <b>Sentiment Analysis:</b> Reviews are categorised into 'positive' or 'negative' 
-using the DistilBERT model (`distilbert-base-uncased-finetuned-sst-2-english`) and represented with emojis.<br>
 
-2. <b>Translation:</b> Translate reviews into French.<br>
+Follow the instructions below to use the features of **MovieSense** on the web interface:
 
-3. <b>Summarization:</b> Input the desired text to receive a concise summary.<br>
+1. **Analysis Button**  
+   - **Description**: The **"Analysis"** button performs three tasks simultaneously:  
+     - **Sentiment Analysis**: Classifies the input movie review as 'positive' or 'negative' using the DistilBERT model (`distilbert-base-uncased-finetuned-sst-2-english`). The result is represented with an emoji (😊 for positive, 😞 for negative).
+     - **Translation**: Translates the input movie review from English to French using the mBART model (`facebook/mbart-large-50-many-to-many-mmt`).
+     - **Summary**: Generates a concise summary of the input movie review using the BART model (`facebook/bart-large-cnn`).
 
-4. <b>Text Generation:</b> Enter a prompt (e.g., "Write a positive review about [Movie Name]") 
-to generate a contextually relevant movie review. 
-The RAG model retrieves relevant information from a database of existing movie reviews to ensure 
-that the generated text is contextually accurate and aligned with the desired sentiment.
+   - **How to Use**:  
+     - Enter a movie review in the input text box.
+     - Click the **"Analysis"** button. The system will:
+       - Display the predicted sentiment with an emoji.
+       - Provide the French translation below the input box.
+       - Show the summarized version of the review on the right side of the webpage.
+<br>
+       
+2. **Generator Button**  
+   - **Description**: The **"Generator"** button generates a new movie review based on a specific sentiment using the Retrieval-Augmented Generation (RAG) approach with the GPT-3.5-turbo model.
+   - **How to Use**:  
+     - Click the **"Generator"** button. You will be prompted to select either "Write a positive review about a movie" or "Write a negative review about a movie."
+     - The generated movie review, based on your chosen sentiment, will appear in the input text box.
+<br>
+     
+3. **Reset Button**  
+   - **Description**: The **"Reset"** button clears all input fields, allowing you to start a new analysis or generate a new review.
+   - **How to Use**:  
+     - Click the **"Reset"** button to clear the input text box and reset the page to its default state.'     
 <br>
 
-## Results and Performance
-This section will be updated soon to include the following:
-- Evaluation metrics (e.g., accuracy, BLEU score, ROUGE score) for sentiment analysis, translation, summarization, and text generation.
-- Sample outputs and comparisons with baseline models.
-- Discussion on the performance and potential improvements.
+### Additional Tips
 
-Stay tuned for updates!
+- **Ensure Proper Configuration**: Make sure you have set up your `.env` file with the OpenAI API key before using the text generation feature.
+- **Internet Connection Required**: An internet connection is necessary to access the OpenAI API for text generation.
+
+### Limitations
+
+- **Text Generation Feature**: The text generation feature using the OpenAI API requires a paid subscription to access the GPT-3.5-turbo model. Users will need their own API key with an active subscription to enable this feature.
 <br><br>
 
+## Results and Performance
+<!-- This section will be updated soon to include the following:
+- Evaluation metrics (e.g., accuracy, BLEU score, ROUGE score) for sentiment analysis, translation, summarization, and text generation.
+- Sample outputs and comparisons with baseline models.
+- Discussion on the performance and potential improvements. -->
+
+### Text Generation Evaluation Metric: **BLEU** (Bilingual Evaluation Understudy Score)
+
+To evaluate the effectiveness of the text generation models, the **BLEU** score is used. **BLEU** measures the precision of n-grams between the generated text and a reference text, assessing the fluency and accuracy of the generated movie reviews. This metric is particularly useful for evaluating the relevance and coherence of text generated by language models.
+
+We evaluated two pre-trained models for text generation on movie reviews:
+
+1. **Baseline GPT-2 Model**: A pre-trained GPT-2 model used without fine-tuning.
+2. **RAG-Enhanced GPT-3.5-turbo**: A Retrieval-Augmented Generation approach combining document retrieval with GPT-3.5-turbo, used without fine-tuning.
+
+#### BLEU Score Results:
+- **Baseline GPT-2 Model**: X.X
+- **RAG-Enhanced GPT-3.5-turbo**: Y.Y
+
+### Discussion
+
+The BLEU score comparison indicates that, even without fine-tuning, the RAG-enhanced GPT-3.5-turbo model outperforms the baseline GPT-2 model. This suggests that retrieval-augmented techniques can significantly improve the relevance and coherence of generated movie reviews. Future work could focus on fine-tuning these models to further enhance performance.
+
+<br>
+
 ## Future Scope
+
 - Extend translation support to other languages.
-- Integration with online platforms or databases for automated review analysis.
-- User accounts to save and manage past reviews.
-- Experimenting with newer models (e.g., GPT-3, T5)
-- Optimizing the current model implementations
-- Enhanced prediction capabilities using Deep Learning.
+
+- Integrate with online platforms or databases for automated review analysis.
+
+- Add user accounts to save and manage past reviews.
+
+- **Optimize current model implementations for better performance**, such as:
+  - Fine-Tuning pre-trained models on domain-specific datasets to improve performance for tasks like sentiment analysis, translation, and summarization.
+  - Model Quantization to reduce model size and speed up inference, even when using pre-trained models.
+  - Pruning to remove unnecessary parameters and decrease computational load, particularly useful during fine-tuning.
+  - Efficient Batching and Data Loading to enhance data processing speed, applicable to both training and inference.
+  - Using Mixed-Precision Training to improve training speed and reduce memory usage when fine-tuning models.
+  - Hyperparameter Tuning to find the optimal settings for enhanced model performance, even for pre-trained models.
+  - Caching and Pre-computation to minimize redundant calculations during inference, improving responsiveness.
+
+- **Enhance prediction capabilities using advanced Deep Learning techniques**, such as:
+  - Transfer Learning with larger pre-trained models for improved accuracy.
+  - Reinforcement Learning from Human Feedback (RLHF) to refine text generation based on user preferences.
+  - Knowledge Distillation to create efficient, smaller models for faster inference.
+  - Attention Mechanisms and Transformer Variants (e.g., Longformer, BigBird) to handle longer sequences more effectively.
+  - Self-Supervised Learning (SSL) to leverage large amounts of unlabeled data for robust model training.
+
+- Implement free or local models for text generation, such as **T5, DistilGPT-2, and Local LLaMA**, to avoid reliance on paid APIs and reduce operational costs.
+
 <br>
 
 ## References and Further Readings
@@ -273,8 +413,35 @@ Stay tuned for updates!
 [Available on Amazon](https://www.amazon.com/Natural-Language-Processing-Transformers-Applications/dp/1098103246)<br>
 <br>
 
-## Page Screenshot
-Positive Sentiment Example:
+<!-- Positive Sentiment Example:
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb5udNA%2Fbtsxp3doUAk%2FU38yky0rcDo3KPc6yCGtLk%2Fimg.png">
 Negative Sentiment Example:
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCpxxG%2FbtsxvIFFLyI%2FRthmnpzRTiaanXaDxgCEjK%2Fimg.png">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCpxxG%2FbtsxvIFFLyI%2FRthmnpzRTiaanXaDxgCEjK%2Fimg.png"> -->
+
+## Page Screenshots
+
+Below are some screenshots of the **MovieSense** interface showcasing its key functionalities:
+
+### Positive Sentiment Example
+![Positive Sentiment Example](images/positive.png)<br>
+*This screenshot demonstrates a movie review analyzed by the **MovieSense** tool, showing a positive sentiment prediction along with the translated French version and a summarized output.*
+
+### Negative Sentiment Example
+![Negative Sentiment Example](images/negative.png)<br>
+*This screenshot demonstrates a movie review analyzed by the **MovieSense** tool, showing a negative sentiment prediction along with the translated French version and a summarized output.*
+
+### Text Generation Output Example
+
+Below are examples of text generated by the GPT-3.5-turbo model in the terminal:
+
+#### Positive Review Output
+![Positive Review Output](images/terminal-positive-output1.png)<br>
+![Positive Review Output](images/terminal-positive-output2.png)
+<br>
+*These screenshots show the output of a positive movie review generated using the GPT-3.5-turbo model via the terminal. Since I do not currently have a paid subscription to the OpenAI API, the generated text is displayed in the terminal rather than within the web interface.*
+
+#### Negative Review Output
+![Negative Review Output](images/terminal-negative-output1.png)<br>
+![Negative Review Output](images/terminal-negative-output2.png)
+<br>
+*These screenshots show the output of a negative movie review generated using the GPT-3.5-turbo model via the terminal. The terminal output illustrates how the model handles generating text for different sentiments.*

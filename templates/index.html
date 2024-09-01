@@ -12,10 +12,12 @@
 </head>
 
 <body>
-    <h3 class="LogoGradient-text Mont text-center mb-4">MovieSense: Sentiment Analysis, Translation, Summary, and Text Generation, </h3>
+    <h3 class="LogoGradient-text Mont text-center mb-4">
+        MovieSense: Sentiment, Translation, Summary & Generation
+    </h3>
     <div class="container">
         <!-- Input -->
-        <div class=" input-section">
+        <div class="input-section">
             <form action="/" method="post" class=" review-form">
                 <textarea class=" shadow card p-3" id="reviewText" name="text"
                           placeholder="Write a review or enter a prompt. Use 'Generator' for new content, 'Analysis' for results, or 'Reset' to start over." rows="11" required>{{ user_input }}</textarea>
@@ -45,7 +47,7 @@
                 {% if prediction %}
                 <h5>
                     <span class="Mont">Predicted Sentiment</span><br>
-                    <span class="emoji">{{ prediction }}</span>
+                    <span class="emoji">{{ prediction|safe }}</span><!-- Use "safe" to render HTML -->
                 </h5>
                 {% else %}
                 {% endif %}
