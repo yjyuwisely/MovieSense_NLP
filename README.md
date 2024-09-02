@@ -124,7 +124,7 @@ with a single click, simplifying the interaction and enhancing user experience.
 making the interface more user-friendly and visually engaging.<br>
 <br>
 
-Additionally, the techniques demonstrated in MovieSense have applications in broader fields like marketing, 
+Additionally, the techniques demonstrated in **MovieSense** have applications in broader fields like marketing, 
 customer feedback analysis, and content moderation, highlighting the adaptability and potential impact of this project.
 <br><br>
 
@@ -309,7 +309,7 @@ based on specific input prompts.
 ## 3.2 Expected Outcomes and Application Areas
 <!-- 6. Explaining the potential impact and real-world applications shows the relevance and utility of your work. -->
 **Expected Outcomes**:
-- **Enhanced Review Insights**: By providing sentiment analysis and summarization, MovieSense enables users to quickly grasp the essence and emotional tone of movie reviews.
+- **Enhanced Review Insights**: By providing sentiment analysis and summarization, **MovieSense** enables users to quickly grasp the essence and emotional tone of movie reviews.
 - **Increased Accessibility**: Translation features broaden the reach of reviews to non-English-speaking audiences, expanding the user base and improving the inclusivity of the platform.
 - **Creative Exploration**: Text generation capabilities allow users to experiment with new review content, fostering creative engagement with movie reviews.
 
@@ -317,7 +317,7 @@ based on specific input prompts.
 - **Marketing**: Analyzing customer feedback and reviews to tailor marketing strategies and improve product offerings.
 - **Customer Feedback Analysis**: Understanding customer sentiments and opinions from reviews to enhance service quality and customer satisfaction.
 - **Content Moderation**: Automatically summarizing and filtering user-generated content for relevance and appropriateness.
-- **Broader NLP Research**: Applying the techniques demonstrated in MovieSense to other domains and languages for more generalized NLP applications.
+- **Broader NLP Research**: Applying the techniques demonstrated in **MovieSense** to other domains and languages for more generalized NLP applications.
 <br>
 
 # 4. Contributions and Execution
@@ -364,7 +364,7 @@ but also highlights my commitment to continuous optimization and innovation to a
 ## 4.2 Project Timeline
 <!-- 8. Provides context for the development process and how the project evolved over time. -->
 - **October 6, 2023**  
-  - Created the initial web template for the MovieSense interface.
+  - Created the initial web template for the **MovieSense** interface.
 
 - **October 7-8, 2023**  
   - Implemented translation from English to French.
